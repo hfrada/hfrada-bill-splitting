@@ -1,0 +1,3 @@
+[submodule "packages/purbio-react-ui"]
+	path = packages/purbio-react-ui
+	url = https://github.com/hfrada/purbio-react-ui.git

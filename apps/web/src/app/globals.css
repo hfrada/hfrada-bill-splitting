@@ -1,0 +1,16 @@
+/*
+ * Single Tailwind entry for the app.
+ *
+ * purbio-react-ui's stylesheet already contains the three @tailwind directives
+ * plus the default theme tokens (the `--color-*`, `--font-*`, `--radius`, …
+ * custom properties + the `.dark` palette), so we import it here rather than
+ * re-declaring @tailwind ourselves. Utilities are generated from the `content`
+ * globs in tailwind.config.ts (app + workspace UI packages).
+ */
+@import 'purbio-react-ui/src/index.css';
+
+@layer base {
+  body {
+    @apply bg-bg text-fg antialiased;
+  }
+}

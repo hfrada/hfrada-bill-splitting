@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "paths": {
+      "@lib/*": ["../purbio-react-ui/src/lib/*"]
+    }
+  },
+  "include": ["src", "tailwind-preset.ts"]
+}

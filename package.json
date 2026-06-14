@@ -1,0 +1,24 @@
+{
+  "name": "hfrada-bill-splitting",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Medium-scale bill-splitting app — Next.js + Turborepo monorepo using purbio-react-ui.",
+  "license": "MIT",
+  "packageManager": "pnpm@11.5.2",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "turbo run dev --filter=@bill/web",
+    "build": "turbo run build --filter=@bill/web",
+    "lint": "turbo run lint --filter=@bill/*",
+    "typecheck": "turbo run typecheck --filter=@bill/*",
+    "test": "turbo run test --filter=@bill/*",
+    "clean": "turbo run clean --filter=@bill/*"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "turbo": "^2.5.0",
+    "typescript": "^5.4.5"
+  }
+}
