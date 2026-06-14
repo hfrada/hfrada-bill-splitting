@@ -16,7 +16,7 @@ import {
   Skeleton,
   Text,
 } from '@bill/ui'
-import { Plus, Trash2, Users } from 'lucide-react'
+import { Plus, Receipt, Trash2, Users } from 'lucide-react'
 import Link from 'next/link'
 import * as React from 'react'
 import { CreateGroupDialog } from './CreateGroupDialog'
@@ -154,14 +154,14 @@ function GroupRow({
         checked={checked}
         onCheckedChange={onToggle}
         aria-label={`Pilih ${group.name}`}
-        className="absolute left-4 top-1/2 z-10 -translate-y-1/2"
+        className="absolute left-3 top-1/2 z-10 -translate-y-1/2"
       />
 
-      <Link href={`/groups/${group.id}`} className="flex flex-row items-center gap-4 p-4 pl-14">
-        <div className="flex-1 space-y-4">
-          <div className="min-w-0 flex-1 flex gap-4 items-center">
-            <span className="grid size-14 place-items-center rounded-full bg-primary-50 text-primary shadow-sm">
-              <Users size={27} strokeWidth={2.4} />
+      <Link href={`/groups/${group.id}`} className="flex flex-row items-center gap-3 p-3 pl-11">
+        <div className="flex-1 space-y-2.5">
+          <div className="min-w-0 flex-1 flex gap-3 items-center">
+            <span className="grid size-12 place-items-center rounded-full bg-primary-50 text-primary shadow-sm">
+              <Users size={24} strokeWidth={2.4} />
             </span>
             <div>
               <div className="flex items-center gap-2">
@@ -170,9 +170,19 @@ function GroupRow({
                   {group.currency.code}
                 </Badge>
               </div>
-              <Text tone="muted" className="block text-sm">
-                {group.members.length} anggota · {group.expenses.length} pengeluaran
-              </Text>
+              <div className="flex items-center gap-3 text-sm text-fg-muted sm:gap-2">
+                <span className="inline-flex items-center gap-1">
+                  <Users size={14} className="sm:hidden" />
+                  {group.members.length}
+                  <span className="hidden sm:inline">anggota</span>
+                </span>
+                <span className="text-fg-subtle">·</span>
+                <span className="inline-flex items-center gap-1">
+                  <Receipt size={14} className="sm:hidden" />
+                  {group.expenses.length}
+                  <span className="hidden sm:inline">pengeluaran</span>
+                </span>
+              </div>
             </div>
           </div>
           {group.members.length > 0 ? (

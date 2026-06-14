@@ -10,7 +10,7 @@ import { colorFor, softChip } from '@/lib/ui'
 
 const MODE_LABEL: Record<string, string> = {
   equal: 'Rata',
-  exact: 'Jumlah pasti',
+  exact: 'Fix',
   shares: 'Rasio',
   percent: 'Persen',
 }

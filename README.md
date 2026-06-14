@@ -8,7 +8,7 @@ otomatis **siapa berutang ke siapa**. Dibangun sebagai **monorepo** dengan
 ## Fitur
 
 - **Multi-grup** — tiap grup punya anggota, mata uang, pengeluaran, dan pelunasan sendiri.
-- **4 mode pembagian** per pengeluaran: **Rata**, **Jumlah pasti**, **Share (bobot)**, **Persen**.
+- **4 mode pembagian** per pengeluaran: **Rata**, **Fix**, **Share (bobot)**, **Persen**.
 - **Saldo otomatis** — tahu siapa kelebihan/kekurangan bayar, dengan visualisasi bar.
 - **Penyederhanaan utang** — saran transfer paling sedikit ("siapa bayar siapa").
 - **Pelunasan** — catat pembayaran antar-anggota; saldo ikut menyesuaikan.

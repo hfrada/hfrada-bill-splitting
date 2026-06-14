@@ -32,7 +32,7 @@ import { useBillStore } from '@/data/store'
 
 const MODE_OPTIONS = [
   { value: 'equal', label: 'Rata' },
-  { value: 'exact', label: 'Jumlah pasti' },
+  { value: 'exact', label: 'Fix' },
   { value: 'shares', label: 'Rasio' },
   { value: 'percent', label: 'Persen' },
 ]
@@ -159,6 +159,7 @@ export function AddExpenseDialog({
               onValueChange={(v) => setPaidBy(v ?? '')}
               options={members.map((m) => ({ value: m.id, label: m.name }))}
               placeholder="Pilih"
+              className="w-full"
             />
           </FormField>
         </div>
@@ -190,6 +191,7 @@ export function AddExpenseDialog({
                     checked={isIn}
                     onCheckedChange={(c) => setChecked((prev) => ({ ...prev, [m.id]: c }))}
                     label={m.name}
+                    className="min-w-24"
                   />
                   <div className="flex items-center gap-2">
                     {isIn && mode === 'exact' && (
@@ -200,6 +202,7 @@ export function AddExpenseDialog({
                         min={0}
                         precision={currency.decimals}
                         step={amountStep}
+                        className="w-40"
                       />
                     )}
                     {isIn && mode === 'shares' && (
@@ -208,6 +211,7 @@ export function AddExpenseDialog({
                         value={shares[m.id] ?? 0}
                         onChange={(v) => setShares((p) => ({ ...p, [m.id]: v }))}
                         min={0}
+                        className="w-40"
                       />
                     )}
                     {isIn && mode === 'percent' && (
