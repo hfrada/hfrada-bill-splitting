@@ -193,7 +193,7 @@ export function AddExpenseDialog({
                     label={m.name}
                     className="min-w-24"
                   />
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-col items-end gap-1">
                     {isIn && mode === 'exact' && (
                       <NumberInput
                         size="sm"
@@ -224,8 +224,11 @@ export function AddExpenseDialog({
                         slotProps={{ input: { style: { width: 72 } } }}
                       />
                     )}
+                    {/* split preview shown below the input (smaller when there's an input above) */}
                     {isIn && preview && (
-                      <span className="w-24 text-right text-sm font-medium tabular-nums">
+                      <span
+                        className={`font-semibold tabular-nums text-primary-600 ${mode === 'equal' ? 'text-sm' : 'text-xs'}`}
+                      >
                         {formatMoney(preview[m.id] ?? 0, currency)}
                       </span>
                     )}

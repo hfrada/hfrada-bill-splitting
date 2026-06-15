@@ -111,6 +111,18 @@ export function GroupsScreen() {
             onCheckedChange={toggleAll}
             className="ml-3"
             label={selected.size > 0 ? `${selected.size} dipilih` : 'Pilih semua'}
+            slotProps={{
+              control: {
+                className: cn(
+                  'mt-0.5 inline-flex h-[1.15rem] w-[1.15rem] shrink-0 items-center justify-center rounded-xs border transition-colors',
+                  // unchecked: subtle grey from theme tokens (adapts to light/dark)
+                  'border-border bg-slate-500/10 text-transparent',
+                  // checked: primary fill
+                  'peer-checked:border-primary-600 peer-checked:bg-primary-600 peer-checked:text-white',
+                  'peer-focus-visible:ring-2 peer-focus-visible:ring-ring peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-bg',
+                ),
+              },
+            }}
           />
           <div className="flex items-center gap-2">
             <IconButton
@@ -155,6 +167,18 @@ function GroupRow({
         onCheckedChange={onToggle}
         aria-label={`Pilih ${group.name}`}
         className="absolute left-3 top-1/2 z-10 -translate-y-1/2"
+        slotProps={{
+          control: {
+            className: cn(
+              'mt-0.5 inline-flex h-[1.15rem] w-[1.15rem] shrink-0 items-center justify-center rounded-xs border transition-colors',
+              // unchecked: subtle grey from theme tokens (adapts to light/dark)
+              'border-border bg-slate-500/10 text-transparent',
+              // checked: primary fill
+              'peer-checked:border-primary-600 peer-checked:bg-primary-600 peer-checked:text-white',
+              'peer-focus-visible:ring-2 peer-focus-visible:ring-ring peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-bg',
+            ),
+          },
+        }}
       />
 
       <Link href={`/groups/${group.id}`} className="flex flex-row items-center gap-3 p-3 pl-11">
